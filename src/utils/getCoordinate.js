@@ -1,8 +1,4 @@
-import {useRef, useState, useEffect, useCallback} from 'react';
-
-const useWeather = (latitude, longitude) => {
-  const [weather, setWeather] = useState('');
-
+const getCoordinate = (latitude, longitude) => {
   var RE = 6371.00877; // 지구 반경(km)
   var GRID = 5.0; // 격자 간격(km)
   var SLAT1 = 30.0; // 투영 위도1(degree)
@@ -42,7 +38,7 @@ const useWeather = (latitude, longitude) => {
       rs['x'] = Math.floor(ra * Math.sin(theta) + XO + 0.5);
       rs['y'] = Math.floor(ro - ra * Math.cos(theta) + YO + 0.5);
 
-      console.log('convert Test', rs);
+      console.log('convert Test ===== >', rs);
     } else {
       rs['x'] = v1;
       rs['y'] = v2;
@@ -68,11 +64,7 @@ const useWeather = (latitude, longitude) => {
     return rs;
   }
 
-  useEffect(() => {
-    dfs_xy_conv('toXY', latitude, -1 * longitude);
-
-    //  TODO : 날씨 api
-  }, []);
+  return dfs_xy_conv('toXY', 36, 125);
 };
 
-export default useWeather;
+export default getCoordinate;
