@@ -11,15 +11,10 @@ router.get('/weather', (req, res) => {
 
   axios
     .get(
-      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=${process.env.WEATHER_KEY}&numOfRows=10&pageNo=1&base_date=20220407&base_time=0500&nx=${result.x}&ny=${result.y}`,
+      `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=${process.env.WEATHER_KEY}&numOfRows=1000&dataType=JSON&pageNo=1&base_date=20220410&base_time=0500&nx=${result.x}&ny=${result.y}`,
     )
     .then(response => {
-      const xmlToJson = convert.xml2json(response.data, {
-        compact: true,
-        spaces: 4,
-      });
-      console.log(`xml to json => ${xmlToJson}`);
-      res.send(xmlToJson);
+      res.send(response.data);
     });
 });
 
