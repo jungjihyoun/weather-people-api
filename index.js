@@ -19,8 +19,12 @@ app.use('/short', shortWeather);
 
 const midWeather = require('./src/routes/midWeather');
 app.use('/mid', midWeather);
+
 const midRain = require('./src/routes/midRain');
 app.use('/mid', midRain);
+
+const dust = require('./src/routes/dust');
+app.use('/dust', dust);
 
 app.use('/graphql', graphqlHTTP({schema: schema, graphiql: true}));
 
