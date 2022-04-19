@@ -64,7 +64,7 @@ const getCoordinate = (latitude, longitude) => {
     return rs;
   }
 
-  return dfs_xy_conv('toXY', 36, 125);
+  return dfs_xy_conv('toXY', longitude, latitude);
 };
 
 export default getCoordinate;
