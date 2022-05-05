@@ -4,8 +4,12 @@ export default gql`
   type Record {
     _id: ID!
     image: String
+    title: String
     content: String
-    weather: Int
+    coat: String
+    top: String
+    bottom: String
+    score: String
   }
 
   type Query {
@@ -15,8 +19,12 @@ export default gql`
 
   input RecordInput {
     image: String
+    title: String
     content: String
-    weather: Int
+    coat: String
+    top: String
+    bottom: String
+    score: String
   }
 
   type Mutation {

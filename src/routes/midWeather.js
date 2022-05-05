@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 import axios from 'axios';
-const convert = require('xml-js');
 import getCoordinate from '../utils/getCoordinate';
 
+// [중기기온조회] 상세기능명세
 router.get('/weather', (req, res) => {
   getCoordinate();
 

@@ -6,7 +6,7 @@ export default {
       return await record.findById(_id);
     },
     async allRecord() {
-      return await record.find();
+      return await record.find().sort({_id: -1});
     },
   },
 };

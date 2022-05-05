@@ -6,11 +6,23 @@ const RecordSchema = new Schema({
   image: {
     type: String,
   },
+  title: {
+    type: String,
+  },
   content: {
     type: String,
   },
-  weather: {
-    type: Number,
+  coat: {
+    type: String,
+  },
+  top: {
+    type: String,
+  },
+  bottom: {
+    type: String,
+  },
+  score: {
+    type: String,
   },
 });
 
