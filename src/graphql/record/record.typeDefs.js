@@ -1,15 +1,27 @@
 import {gql} from 'apollo-server';
 
 export default gql`
-  type Record {
-    _id: ID!
-    image: String
-    title: String
-    content: String
+  input IDetail {
     coat: String
     top: String
     bottom: String
-    score: String
+    score: Int
+  }
+
+  type ITest {
+    coat: String
+    top: String
+    bottom: String
+    score: Int
+  }
+
+  type Record {
+    _id: ID!
+    title: String
+    content: String
+    detail: ITest
+    image: [String]
+    weather: [String]
   }
 
   type Query {
@@ -18,17 +30,20 @@ export default gql`
   }
 
   input RecordInput {
-    image: String
     title: String
     content: String
-    coat: String
-    top: String
-    bottom: String
-    score: String
+    detail: IDetail
+    image: [String]
+    weather: [String]
+  }
+
+  input ImageInput {
+    image: [String]
   }
 
   type Mutation {
     createRecord(input: RecordInput): Record
+    uploadImage(_id: ID!, input: ImageInput): Record
     updateRecord(_id: ID!, input: RecordInput): Record
     deleteRecord(_id: ID!): Record
   }

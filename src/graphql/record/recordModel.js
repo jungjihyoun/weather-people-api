@@ -4,7 +4,10 @@ const Schema = mongoose.Schema;
 
 const RecordSchema = new Schema({
   image: {
-    type: String,
+    type: [String],
+  },
+  weather: {
+    type: [String],
   },
   title: {
     type: String,
@@ -12,17 +15,19 @@ const RecordSchema = new Schema({
   content: {
     type: String,
   },
-  coat: {
-    type: String,
-  },
-  top: {
-    type: String,
-  },
-  bottom: {
-    type: String,
-  },
-  score: {
-    type: String,
+  detail: {
+    coat: {
+      type: String,
+    },
+    top: {
+      type: String,
+    },
+    bottom: {
+      type: String,
+    },
+    score: {
+      type: String,
+    },
   },
 });
 

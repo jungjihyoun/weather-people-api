@@ -26,6 +26,9 @@ app.use('/mid', midRain);
 const dust = require('./src/routes/dust');
 app.use('/dust', dust);
 
+const image = require('./src/routes/image');
+app.use('/image', image);
+
 app.use('/graphql', graphqlHTTP({schema: schema, graphiql: true}));
 
 app.listen(port, () => {
