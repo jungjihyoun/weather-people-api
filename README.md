@@ -25,9 +25,31 @@ Composition
 프로젝트의 주요 구성 요소는 다음과 같습니다:      
 
 ### Description
-#### src
-***
 
+```bash
+📦src
+ ┣ 📂graphql
+ ┃ ┣ 📂image
+ ┃ ┣ 📂record
+ ┃ ┃ ┣ 📜record.mutations.js
+ ┃ ┃ ┣ 📜record.queries.js
+ ┃ ┃ ┣ 📜record.typeDefs.js
+ ┃ ┃ ┗ 📜recordModel.js
+ ┃ ┣ 📂user
+ ┃ ┃ ┣ 📜user.mutations.js
+ ┃ ┃ ┣ 📜user.queries.js
+ ┃ ┃ ┣ 📜user.typeDefs.js
+ ┃ ┃ ┗ 📜userModel.js
+ ┃ ┗ 📂weather
+ ┣ 📂routes
+ ┃ ┣ 📜dust.js
+ ┃ ┣ 📜image.js
+ ┃ ┣ 📜midRain.js
+ ┃ ┣ 📜midWeather.js
+ ┃ ┗ 📜shortWeather.js
+ ┗ 📂utils
+ ┃ ┗ 📜getCoordinate.js
+```
 
 
 ## Installation    
